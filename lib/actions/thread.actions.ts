@@ -46,7 +46,7 @@ export async function fetchPosts(pageNumber = 1, pageSize = 20) {
     .limit(pageSize)
     .populate({ path: "author", model: User })
     .populate({
-      path: "childrem",
+      path: "children",
       populate: {
         path: "author",
         model: User,
@@ -110,7 +110,7 @@ export async function addCommentToThread(
     }
     //create new thread with the comment text
     const commentThread = new Thread({
-      Text: commentText,
+      text: commentText,
       author: userId,
       parentId: threadId,
     });

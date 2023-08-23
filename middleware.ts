@@ -1,6 +1,3 @@
-// Resource: https://clerk.com/docs/nextjs/middleware#auth-middleware
-// Copy the middleware code as it is from the above resource
-
 import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
@@ -8,7 +5,7 @@ export default authMiddleware({
   publicRoutes: ["/api/webhook/clerk"],
 
   // An array of routes to be ignored by the authentication middleware.
-  ignoredRoutes: ["/api/webhook/clerk"],
+  ignoredRoutes: ["/api/webhook/clerk", "/api/uploadthing"],
 });
 
 export const config = {
